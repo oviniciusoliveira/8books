@@ -1,6 +1,8 @@
+@use '../styles/common.module.scss' as commom;
+
 :root {
   --pink-500: #ff57b2;
-  --white-500: #f8f8f8;
+  --white: #f8f8f8;
 
   --grey-900: #1a1d23;
   --grey-500: #bbbbbb;
@@ -8,7 +10,7 @@
 
   --background: var(--grey-900);
   --body: var(--grey-500);
-  --title: var(--white-500);
+  --title: var(--white);
 }
 
 * {
@@ -18,11 +20,11 @@
 }
 
 html {
-  @media (max-width: 1080px) {
+  @media (max-width: commom.$lg-max-width) {
     font-size: 93.75%;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: commom.$sm-max-width) {
     font-size: 87.5%;
   }
 }
@@ -47,4 +49,8 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--white)
 }

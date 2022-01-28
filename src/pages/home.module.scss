@@ -1,19 +1,24 @@
-@use './../styles/common.module.scss' as commom;
+@use '../styles/common.module.scss' as commom;
 
 .container {
-  @include commom.container();
-}
-
-.header {
-  margin-bottom: 2rem;
+  width: 100%;
+  max-width: commom.$sm-max-width;
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
 }
 
 .post {
   h2 {
     font-size: 1.7rem;
-    color: var(--white-500);
     line-height: 2.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--pink-500);
+    }
   }
 
   & + .post {
@@ -41,8 +46,10 @@
     }
   }
 
-  span + span {
-    margin-left: 1.2rem;
+  & > * {
+    &:not(:first-child) {
+      margin-left: 1.2rem;
+    }
   }
 }
 

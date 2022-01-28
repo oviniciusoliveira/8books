@@ -1,1 +1,65 @@
-// TODO
+@use '../../styles//common.module.scss' as commom;
+
+.banner {
+  position: relative;
+  height: 400px;
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.container {
+  padding: 0 3rem;
+  max-width: commom.$sm-max-width;
+  margin: 0 auto;
+  margin-top: 4em;
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+.postInfo {
+  color: var(--grey-400);
+  display: flex;
+  align-items: center;
+  margin-top: 1.3rem;
+  font-size: 0.9rem;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  & > * {
+    &:not(:first-child) {
+      margin-left: 1.2rem;
+    }
+  }
+}
+
+.content {
+  margin: 4rem 0;
+}
+
+.contentBlock {
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  & + .contentBlock {
+    margin-top: 4em;
+  }
+}
