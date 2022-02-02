@@ -12,6 +12,7 @@ import { getPrismicClient } from '../../services/prismic';
 import styles from './post.module.scss';
 import Header from '../../components/Header';
 import { formatDate } from '../../utils/formatDate';
+import { UtterancComments } from '../../components/UtterancComments';
 
 interface ContentData {
   heading: string;
@@ -83,6 +84,8 @@ export default function Post({ post }: PostProps): JSX.Element {
                 );
               })}
             </section>
+
+            <UtterancComments />
           </main>
         </>
       )}
@@ -91,7 +94,7 @@ export default function Post({ post }: PostProps): JSX.Element {
 }
 
 function mapContent(content: any): ContentData[] {
-  return content.map(contentData => {
+  const mappedContent = content.map(contentData => {
     return {
       heading: contentData.heading,
       body: contentData.body.map(body => {
@@ -103,6 +106,8 @@ function mapContent(content: any): ContentData[] {
       }),
     };
   });
+
+  return mappedContent;
 }
 
 function mapPost(document: Document): Post {
